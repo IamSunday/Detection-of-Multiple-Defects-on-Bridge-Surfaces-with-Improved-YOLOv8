@@ -11,13 +11,13 @@ This repo contains the official **PyTorch** code for YOLOv8-CBAM-Wise-IoU .
 
 This study adopts YOLOv8 as the foundational framework. Compared to other widely used CNN models, YOLOv8 offers several benefits, including a streamlined structure, fewer hyperparameters, and rapid training and inference capabilities. However, real-world bridge defect images often feature intricate backgrounds with elements such as surface textures, shadows, and water stains. These complexities can adversely impact the accuracy of crack detection models by introducing visual noise that complicates the distinction between defects and their surroundings, resulting in false positives or missed detections. To address these challenges, this paper incorporates the CBAM attention mechanism and the Wise-IoU loss function into the YOLOv8 model, presenting the YOLOv8-CBAM-Wise-IoU model for detecting multiple types of surface defects. The structure of this model is illustrated in Fig.1..
 
-### Key Features:
+## Key Features:
 (1)The innovative addition of the CBAM module in YOLOv8 is an attention mechanism that adaptively adjusts channels and spatial weights in feature maps to improve the generalization and perception performance of defect detection models.  
 (2)The innovative use of the Wise-IoU loss function in YOLOv8, which has a gradient gain recognition allocation strategy, strategically reduces the competitiveness of high quality anchor boxes and the adverse effects of low quality anchor boxes on gradients. This enables the model to prioritize average-quality anchor boxes, further enhancing its detection accuracy.  
 (3)This paper proposes YOLOv8-CBAM-Wise-IoU model by integrating the advantages of CBAM module and Wise-IoU loss function, and validates the performance of the proposed model through the task of multi-defect detection on bridge surfaces.  
 
 
-### Method 
+## Method 
 
 #### The CBAM module
 
@@ -46,8 +46,9 @@ f_{\text{loss}} &= \lambda_1 f_{\text{BCEL}} + \lambda_2 f_{\text{DFL}} + \lambd
 Where, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> are the sizes of the minimum bounding box. To prevent <i>R<sub>WIoU</sub></i> from hindering convergence speed, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> are detached from the computation graph (indicated by superscript *), effectively eliminating factors hindering convergence speed. <i>R<sub>WIoU</sub></i> ∈ [1, e) significantly enlarges the <i>L<sub>IoU</sub></i> of ordinary quality anchor boxes. <i>L<sub>IoU</sub></i> ∈ [1, e) significantly reduces the <i>R<sub>WIoU</sub></i> of high-quality anchor boxes and their focus on center point distance when the anchor box aligns well with the target box. The Wise-IoU loss function is incorporated into the overall loss formula, aiming to enhance its performance in boundary box regression tasks, especially in handling geometric factors and low-quality examples during training.
 <br>
 
-### Results
-##The performance diagnostic curves
+## Results
+
+### The performance diagnostic curves
 <br>
 
 <p align="center">
@@ -57,7 +58,8 @@ Where, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> are the sizes of the minimu
 The performance diagnostic curve of YOLOv8-Wise-IoU is shown in Fig.3. In the F1-Confidence curve, at a confidence level of 0.276, the proposed model achieved the highest F1 score of 0.58, indicating superior performance compared to the baseline methods. A larger area under the Recall-Confidence curve indicates a higher recall rate and lower false positive rate for the developed model. The developed model is located in the upper right corner of the Precision-Recall curve, meaning the area under the curve is larger, reflecting its efficiency.
 
 <br>
-##The comparison of heatmaps.
+
+### The comparison of heatmaps
 
 <br>
 <p align="center">
@@ -65,7 +67,8 @@ The performance diagnostic curve of YOLOv8-Wise-IoU is shown in Fig.3. In the F1
 </p>
 <p align="center">Fig.4. The comparison of heatmaps.</p>   
 As shown in Fig.4., the YOLOv8-CBAM model can focus on defect areas in the image, especially specific regions, allowing it to extract more critical information from the image. By comparing the heatmaps, it can be inferred that after adding the CBAM module to the YOLOv8 model, the model's attention is focused on defect areas in the image. In summary, it can be concluded that the CBAM module utilizes both global and local information from bridge surface images to identify key information in the images, enhancing the representation of critical areas in bridge surface defect recognition, thereby improving the model's recognition capability.   
-##Detection performance of different models for bridge surface defects  
+
+### Detection performance of different models for bridge surface defects  
 Fig.5.-8. show the results of the YOLOv8-CBAM-Wise-IoU model, YOLOv8x model, Faster R-CNN model, and Retina Net model in detecting bridge surface defects.   
 <p align="center">
     <img src="Figure/效果图SCI-CBAM-Wise-Iou.jpg" width= "600">
@@ -84,15 +87,19 @@ Fig.5.-8. show the results of the YOLOv8-CBAM-Wise-IoU model, YOLOv8x model, Fas
     <img src="Figure/效果图SCI-Retina-net新.jpg" width= "600">
 </p>
 <p align="center">Fig.8. The results results of the Retina Net model.</p>  
+
 ## Dependencies
 
-- Python 3.8
-- PyTorch == 1.13.0
-- torchvision == 0.12.0
-- fvcore == 0.1.5
-- numpy
-- timm == 0.4.12
-- yacs
+- Python 3.11
+- torch == 2.3.1
+- CUDA == 12.1
+- torchvision == 0.18.1
+- ultralytics == 8.3.33
+- numpy == 1.26.3
+- matplotlib == 3.9.0
+- opencv-python == 4.10.0.84
+- scipy == 1.13.1
+- tqdm == 4.65.2
 
 
 ## Dataset
