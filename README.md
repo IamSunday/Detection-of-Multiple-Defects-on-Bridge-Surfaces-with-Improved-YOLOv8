@@ -103,16 +103,9 @@ Fig.5.-8. show the results of the YOLOv8-CBAM-Wise-IoU model, YOLOv8x model, Fas
 
 
 ## Dataset
-
-* aluminum surface defect dataset:
-
-original：https://tianchi.aliyun.com/dataset/140666<br>
-Used in the paper：[https://www.kaggle.com/datasets/wehaoreal/aluminum-profile-surface-defects-data-set](https://www.kaggle.com/datasets/weihaoreal/aluminum-profile-surface-defects-data-set)
-
-* X-SSD hot-rolled steel strip:
-
-[https://www.kaggle.com/datasets/sayelabualigah/x-sdd](https://www.kaggle.com/datasets/sayelabualigah/x-sdd)
-
-* nut:
-
-[https://uverse.rboflow.com/rocz/nutsqnfzt/dataset/2](https://www.kaggle.com/datasets/weihaoreal/nut-surface-defect-dataset)
+<p align="center">
+    <img src="Figure/数据集图片样例.jpg" width= "600">
+</p>
+<p align="center">Fig.9. Sample of defect images in datase.</p>    
+This study gathered a dataset of over 3,700 images depicting various bridge defects from Guizhou, annotated using the LabelImg tool. The dataset is divided into 3,219 images for training, 246 for validation, and 246 for testing. It includes seven common defect types: cracks, seepage, leakage, spalling, honeycombing, decay, and voids. Moreover, the dataset accounts for detection under varying sunlight conditions and includes features such as paint, expansion joints, water stains, and dry moss. Fig. 9. illustrates several of captured images.
+To ensure the rigor of the research and the confidentiality of the data, the dataset will not be publicly available until the paper is officially accepted, to prevent potential misuse or impact on the integrity of the research. Once the paper is accepted, we will promptly release the dataset for academic use, to promote further research and development in the related field.
