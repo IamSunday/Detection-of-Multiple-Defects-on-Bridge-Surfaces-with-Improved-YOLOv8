@@ -5,21 +5,18 @@ This repo contains the official **PyTorch** code for YOLOv8-CBAM-Wise-IoU .
 ## Introduction
 
 <p align="center">
-    <img src="figures/Fig1.jpg" width= "600">
-</p>
-<p align="center">
-    <img src="figures/Fig8.jpg" width= "600">
+    <img src="figures/YOLOv8CBAM结构图新.png" width= "600">
 </p>
 
 ### Key Features:
-- This paper introduces the **Receptive-Field Attention Convolution (RFAConv)** module into the ViT model, re-placing standard convolution operations with a spatial attention mechanism. This allows the model to capture more comprehensive feature information. Experimental results show that applying this module to a full-sized ViT not only enhances the model's fitting ability but also sig-nificantly improves accuracy.
-- The paper designs and proposes the **Context Broad-casting Median (CBM)** module, specifically for metal surface defect detection. Extensive ablation experiments demonstrate the superior performance of this module in metal surface defect detection tasks.
-- By integrating the advantages of RFAConv and CBM, this paper proposes the **RFAConv-CBM-ViT** model. Comprehensive comparative experiments prove that this model outperforms all benchmark comparison models.
+(1)The innovative addition of the CBAM module in YOLOv8 is an attention mechanism that adaptively adjusts channels and spatial weights in feature maps to improve the generalization and perception performance of defect detection models. 
+(2)The innovative use of the Wise-IoU loss function in YOLOv8, which has a gradient gain recognition allocation strategy, strategically reduces the competitiveness of high quality anchor boxes and the adverse effects of low quality anchor boxes on gradients. This enables the model to prioritize average-quality anchor boxes, further enhancing its detection accuracy. 
+(3)This paper proposes YOLOv8-CBAM-Wise-IoU model by integrating the advantages of CBAM module and Wise-IoU loss function, and validates the performance of the proposed model through the task of multi-defect detection on bridge surfaces. 
 
 
 ### Method 
 
-#### RFAConvolution
+#### The CBAM module
 
 <p align="center">
     <img src="figures/Fig2.jpg" width= "600">
