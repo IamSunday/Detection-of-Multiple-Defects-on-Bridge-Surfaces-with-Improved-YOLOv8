@@ -63,7 +63,7 @@ The performance diagnostic curve of YOLOv8-Wise-IoU is shown in Fig.3. In the F1
 
 <br>
 <p align="center">
-    <img src="Figure/热力图汇总.jpg" width= "800">
+    <img src="Figure/热力图汇总.jpg" width= "600">
 </p>
 <p align="center">Fig.4. The comparison of heatmaps.</p>   
 As shown in Fig.4., the YOLOv8-CBAM model can focus on defect areas in the image, especially specific regions, allowing it to extract more critical information from the image. By comparing the heatmaps, it can be inferred that after adding the CBAM module to the YOLOv8 model, the model's attention is focused on defect areas in the image. In summary, it can be concluded that the CBAM module utilizes both global and local information from bridge surface images to identify key information in the images, enhancing the representation of critical areas in bridge surface defect recognition, thereby improving the model's recognition capability.   
