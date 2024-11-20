@@ -3,7 +3,7 @@
 This repo contains the official **PyTorch** code for YOLOv8-CBAM-Wise-IoU .
 
 ## Introduction
-
+As machine vision technology evolves, a multitude of models for identifying bridge defects have been developed. However, the majority of these models are limited to detecting individual defects and are ill-equipped to handle scenarios involving multiple concurrent defects. Hence, the swift identification of various defects on bridge surfaces presents a formidable challenge. Addressing this issue, the present study introduces the YOLOv8-CBAM-Wise-IoU model, designed to detect seven distinct categories of defects on bridge surfaces. This model leverages the CBAM attention mechanism and the Wise-IoU loss function, and its performance is assessed using metrics including precision, recall, F1 score and mAP50. The proposed YOLOv8-CBAM-Wise-IoU model was rigorously evaluated through ablation studies and benchmarked against both one-stage and two-stage deep learning models. The model achieved impressive average metrics, with precision at 97.9%, recall at 76%, F1 score at 58%, mAP50 at 55.4%, and mAP50-95 at 32.4%. These results surpass those of the baseline models and other ablation combinations, indicating that the proposed model significantly improves the detection of multiple defect types on bridge surfaces, offering superior accuracy and robustness.   
 <p align="center">
     <img src="Figure/YOLOv8CBAM结构图新.png" width= "600">
 </p>
