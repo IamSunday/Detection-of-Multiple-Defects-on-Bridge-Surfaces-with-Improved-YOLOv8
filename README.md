@@ -3,19 +3,19 @@
 This repo contains the official **PyTorch** code for YOLOv8-CBAM-Wise-IoU .
 
 ## Introduction
-As machine vision technology evolves, a multitude of models for identifying bridge defects have been developed. However, the majority of these models are limited to detecting individual defects and are ill-equipped to handle scenarios involving multiple concurrent defects. Hence, the swift identification of various defects on bridge surfaces presents a formidable challenge. Addressing this issue, the present study introduces the YOLOv8-CBAM-Wise-IoU model, designed to detect seven distinct categories of defects on bridge surfaces. This model leverages the CBAM attention mechanism and the Wise-IoU loss function, and its performance is assessed using metrics including precision, recall, F1 score and mAP50. The proposed YOLOv8-CBAM-Wise-IoU model was rigorously evaluated through ablation studies and benchmarked against both one-stage and two-stage deep learning models. The model achieved impressive average metrics, with precision at 97.9%, recall at 76%, F1 score at 58%, mAP50 at 55.4%, and mAP50-95 at 32.4%. These results surpass those of the baseline models and other ablation combinations, indicating that the proposed model significantly improves the detection of multiple defect types on bridge surfaces, offering superior accuracy and robustness.   
+With advancements in machine vision technology, numerous models have been created to identify defects on bridges. Nonetheless, most of these models focus on detecting individual defects and struggle to handle situations where multiple defects occur simultaneously. Consequently, rapidly identifying a variety of defects on bridge surfaces remains a significant challenge. To tackle this issue, this study proposes the YOLOv8-CBAM-Wise-IoU model, which is tailored to identify seven different types of defects on bridge surfaces. The model incorporates the CBAM attention mechanism along with the Wise-IoU loss function and evaluates performance using metrics such as precision, recall, F1 score, and mAP50. Comprehensive ablation studies and comparisons with one-stage and two-stage deep learning models were conducted to validate the model's effectiveness. The YOLOv8-CBAM-Wise-IoU model demonstrated strong results, achieving a precision of 97.9%, recall of 76%, F1 score of 58%, mAP50 of 55.4%, and mAP50-95 of 32.4%. These outcomes surpass those of baseline models and alternative ablation configurations, highlighting the model's capability to enhance detection accuracy and robustness across multiple defect types on bridge surfaces.
 <p align="center">
     <img src="Figure/YOLOv8CBAM结构图新.png" width= "600">
 </p>
 <p align="center">Fig.1. Architecture of the proposed YOLOv8-CBAM-Wise-IoU model.</p>  
 
-This study adopts YOLOv8 as the foundational framework. Compared to other widely used CNN models, YOLOv8 offers several benefits, including a streamlined structure, fewer hyperparameters, and rapid training and inference capabilities. However, real-world bridge defect images often feature intricate backgrounds with elements such as surface textures, shadows, and water stains. These complexities can adversely impact the accuracy of crack detection models by introducing visual noise that complicates the distinction between defects and their surroundings, resulting in false positives or missed detections. To address these challenges, this paper incorporates the CBAM attention mechanism and the Wise-IoU loss function into the YOLOv8 model, presenting the YOLOv8-CBAM-Wise-IoU model for detecting multiple types of surface defects. The structure of this model is illustrated in Fig.1..
+This research employs YOLOv8 as the core framework due to its advantages over other commonly used CNN models. Notable benefits of YOLOv8 include its simplified architecture, reduced number of hyperparameters, and high-speed training and inference capabilities. Nonetheless, real-world images of bridge defects often exhibit complex backgrounds, featuring elements such as surface textures, shadows, and water stains. These factors introduce visual noise that can negatively influence the performance of crack detection models, making it harder to distinguish defects from their surroundings and leading to false positives or undetected defects. To overcome these obstacles, the proposed approach integrates the CBAM attention mechanism and Wise-IoU loss function into the YOLOv8 framework, resulting in the YOLOv8-CBAM-Wise-IoU model, which is specifically designed for detecting multiple surface defect types. The architecture of this model is depicted in Fig.1.
 
 ## Key Features:
-(1)Create a dataset for multiple defects on the bridge surface in Guizhou. This dataset contains samples of seven defects and incorporates complexities commonly encountered in real-world scenarios.  
-(2)The innovative addition of the CBAM module in YOLOv8 is an attention mechanism that adaptively adjusts channels and spatial weights in feature maps to improve the generalization and perception performance of defect detection models.  
-(3)The innovative use of the Wise-IoU loss function in YOLOv8, which has a gradient gain recognition allocation strategy, strategically reduces the competitiveness of high quality anchor boxes and the adverse effects of low quality anchor boxes on gradients. This enables the model to prioritize average-quality anchor boxes, further enhancing its detection accuracy.  
-(4)This paper proposes YOLOv8-CBAM-Wise-IoU model by integrating the advantages of CBAM module and Wise-IoU loss function, and validates the performance of the proposed model through the task of multi-defect detection on bridge surfaces.  
+(1)A dataset for detecting multiple bridge surface defects in Guizhou has been developed, encompassing samples of seven defect types. This dataset reflects the complexities of real-world scenarios to provide a robust testing ground for defect detection models.
+(2)The incorporation of the CBAM module into YOLOv8 introduces an innovative attention mechanism that dynamically adjusts channel and spatial weights in feature maps. This enhancement improves the model's ability to generalize and perceive defects effectively. 
+(3)The Wise-IoU loss function is also innovatively employed in YOLOv8, utilizing a gradient gain recognition allocation strategy. This approach minimizes the negative impact of low-quality anchor boxes while reducing the competitiveness of high-quality ones. By emphasizing anchor boxes of average quality, the model achieves improved detection accuracy.
+(4)By combining the strengths of the CBAM module and Wise-IoU loss function, this study presents the YOLOv8-CBAM-Wise-IoU model. The proposed model is rigorously evaluated through the challenging task of detecting multiple defect types on bridge surfaces.
 
 
 ## Method 
@@ -26,7 +26,7 @@ This study adopts YOLOv8 as the foundational framework. Compared to other widely
     <img src="Figure/CBAM概述-self3.png" width= "600">
 </p>
 <p align="center">Fig.2. The CBAM module.</p> 
-This study incorporates the CBAM attention mechanism into the Neck component of the model to strengthen its feature extraction and fusion capabilities. CBAM is an advanced attention mechanism designed to improve the performance of convolutional neural networks (CNNs). By adaptively adjusting channel and spatial weights in feature maps, CBAM enhances the model’s generalization and perception abilities, making it more effective in defect detection. The proposed model seamlessly integrates CBAM with Wise-IoU, further boosting its capacity to accurately identify and localize multiple defects on bridge surfaces. The structure of the CBAM module is illustrated in Fig.2..
+This research integrates the CBAM attention mechanism into the Neck component of the model to enhance its ability to extract and fuse features. CBAM, a sophisticated attention mechanism, is specifically designed to optimize the performance of convolutional neural networks (CNNs). By dynamically modifying the channel and spatial weights in feature maps, CBAM improves the model’s capacity for generalization and perception, thereby increasing its effectiveness in detecting defects. The proposed model combines CBAM with the Wise-IoU loss function, resulting in an enhanced capability to accurately detect and localize multiple defects on bridge surfaces. The structure of the CBAM module is illustrated in Fig.2..
 
 
 
@@ -34,17 +34,13 @@ This study incorporates the CBAM attention mechanism into the Neck component of 
 <br>
 
 #### The Wise-IoU Loss Function
-
-The introduction of anchor-free methods in the YOLOv8 model has brought significant changes to the loss function. Optimization can be divided into two aspects: classification and regression. Compared to YOLOv5, the confidence loss function has been removed and replaced by a one-hot encoding format in the classification loss to indicate "whether this area contains such an object." The classification loss still uses Binary Cross-Entropy Loss (BCEL), and the bounding box regression loss employs Distribution Focal Loss (DFL) and CIoU loss. The loss function is expressed as:  
-<p align="center">$$f_{\text{loss}} = \lambda_1 f_{\text{class}} + \lambda_2 f_{\text{DFL}} + \lambda_3 f_{\text{CIoU}}$$</p>  
-Here, <code>f<sub>loss</sub></code> is the total loss, &lambda;<sub>1</sub>, &lambda;<sub>2</sub>, and &lambda;<sub>3</sub> are weight factors assigned to each loss term, and <code>f<sub>class</sub></code>, <code>f<sub>DFL</sub></code>, and <code>f<sub>CIoU</sub></code> represent the individual loss functions for binary cross-entropy loss, distribution focal loss, and IoU loss, respectively. BCEL is used for classification, measuring the difference between the predicted class probabilities and the ground truth labels. DFL and CIoU losses are used for regression. DFL helps the network quickly focus on values near the label, maximizing the probability density at the label location. CIoU further optimizes the matching of bounding boxes, ensuring that the predicted box's center, size, and shape closely align with the ground truth box, while also accelerating model convergence.  
-This study employs the Wise-IoU loss function from as the bounding box regression loss. This function offers two key advantages. Firstly, it tackles the problem of low-quality samples in training data, where geometric elements like distance and aspect ratio intensify penalties, thereby diminishing the model's ability to generalize effectively. An ideal loss function minimizes the impact of geometric factors when the anchor box closely matches the target box, enhancing the model's generalization capabilities. The Wise-IoU function is expressed as:
+This study utilizes the Wise-IoU loss function as the bounding box regression loss, providing two significant advantages. First, it addresses challenges posed by low-quality samples in the training data. Specifically, it reduces the influence of geometric factors such as distance and aspect ratio, which can otherwise amplify penalties and hinder the model's ability to generalize. By limiting the impact of these geometric elements when the anchor box closely aligns with the target box, the Wise-IoU loss function enhances the model’s generalization performance. The mathematical representation of the Wise-IoU function is:
 <p align="center">$$\begin{aligned}
 L_{\text{WIoU}} &= R_{\text{WIoU}}L_{\text{IoU}} \\
 R_{\text{WIoU}} &= \exp\left(\frac{(x - x_{\text{gt}})^2 + (y - y_{\text{gt}})^2}{(W_{\text{gt}}^2 + H_{\text{gt}}^2)^*}\right) \\
 f_{\text{loss}} &= \lambda_1 f_{\text{BCEL}} + \lambda_2 f_{\text{DFL}} + \lambda_3 f_{\text{WIoU}}
 \end{aligned}$$</p>  
-Where, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> are the sizes of the minimum bounding box. To prevent <i>R<sub>WIoU</sub></i> from hindering convergence speed, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> are detached from the computation graph (indicated by superscript *), effectively eliminating factors hindering convergence speed. <i>R<sub>WIoU</sub></i> ∈ [1, e) significantly enlarges the <i>L<sub>IoU</sub></i> of ordinary quality anchor boxes. <i>L<sub>IoU</sub></i> ∈ [1, e) significantly reduces the <i>R<sub>WIoU</sub></i> of high-quality anchor boxes and their focus on center point distance when the anchor box aligns well with the target box. The Wise-IoU loss function is incorporated into the overall loss formula, aiming to enhance its performance in boundary box regression tasks, especially in handling geometric factors and low-quality examples during training.
+In the Wise-IoU loss function, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> represent the dimensions of the smallest enclosing bounding box. To maintain convergence speed, these parameters are detached from the computational graph (denoted by a superscript *), effectively mitigating factors that could slow convergence. The term <i>R<sub>WIoU</sub></i> ∈ [1, e) substantially increases the impact of <i>L<sub>IoU</sub></i> for anchor boxes of ordinary quality. Conversely, <i>L<sub>IoU</sub></i> ∈ [1, e) significantly decreases <i>R<sub>WIoU</sub></i> for high-quality anchor boxes, reducing their sensitivity to center point distance when alignment with the target box is already achieved. By integrating the Wise-IoU loss function into the overall loss formula, this method aims to improve boundary box regression performance, particularly by addressing geometric factors and the challenges posed by low-quality samples during training.
 <br>
 
 ## Results
@@ -56,7 +52,7 @@ Where, <i>W<sub>g</sub></i> and <i>H<sub>g</sub></i> are the sizes of the minimu
     <img src="Figure/YOLOv8-CBAM-Wise-IoU-P、R、F1、mAP50.jpg" width= "600">
 </p>
 <p align="center">Fig.3. The performance diagnostic curves.</p> 
-The performance diagnostic curve of YOLOv8-Wise-IoU is shown in Fig.3. In the F1-Confidence curve, at a confidence level of 0.276, the proposed model achieved the highest F1 score of 0.58, indicating superior performance compared to the baseline methods. A larger area under the Recall-Confidence curve indicates a higher recall rate and lower false positive rate for the developed model. The developed model is located in the upper right corner of the Precision-Recall curve, meaning the area under the curve is larger, reflecting its efficiency.
+The performance diagnostic curve for YOLOv8-Wise-IoU is depicted in Fig. 3. In the F1-Confidence curve, the proposed model achieved its peak F1 score of 0.58 at a confidence threshold of 0.276, demonstrating superior performance relative to baseline methods. A larger area under the Recall-Confidence curve highlights the model’s high recall rate and reduced false positive rate. Additionally, the model's position in the upper right corner of the Precision-Recall curve, coupled with its larger area under the curve, underscores its overall detection efficiency.
 
 <br>
 
@@ -67,27 +63,27 @@ The performance diagnostic curve of YOLOv8-Wise-IoU is shown in Fig.3. In the F1
     <img src="Figure/热力图新.png" width= "600">
 </p>
 <p align="center">Fig.4. The comparison of heatmaps.</p>   
-As shown in Fig.4., the YOLOv8-CBAM model can focus on defect areas in the image, especially specific regions, allowing it to extract more critical information from the image. By comparing the heatmaps, it can be inferred that after adding the CBAM module to the YOLOv8 model, the model's attention is focused on defect areas in the image. In summary, it can be concluded that the CBAM module utilizes both global and local information from bridge surface images to identify key information in the images, enhancing the representation of critical areas in bridge surface defect recognition, thereby improving the model's recognition capability.   
+As illustrated in Fig. 4, the YOLOv8-CBAM model effectively concentrates on defect regions within an image, particularly targeting specific areas to extract essential information. A comparison of the heatmaps reveals that incorporating the CBAM module into the YOLOv8 model significantly enhances the model’s focus on defect regions. This suggests that the CBAM module leverages both global and local information from bridge surface images to pinpoint critical features. Consequently, it strengthens the representation of key regions in defect recognition, improving the model's overall detection performance.
 
 ### Detection performance of different models for bridge surface defects  
 Fig.5.-8. show the results of the YOLOv8-CBAM-Wise-IoU model, YOLOv8x model, Faster R-CNN model, and Retina Net model in detecting bridge surface defects.   
 <p align="center">
     <img src="Figure/效果图SCI-CBAM-Wise-Iou.jpg" width= "600">
 </p>
-<p align="center">Fig.5. The results of  YOLOv8-CBAM-Wise-IoU model.</p>     
+<p align="center">Fig.5. YOLOv8-CBAM-Wise-IoU model.</p>     
 <p align="center">
     <img src="Figure/效果图SCI-yolov8x新.jpg" width= "600">
 </p>
-<p align="center">Fig.6. The results of  YOLOv8x model.</p>    
+<p align="center">Fig.6. YOLOv8x model.</p>    
 
 <p align="center">
     <img src="Figure/效果图SCI-Faster-Rcnn新.jpg" width= "600">
 </p>
-<p align="center">Fig.7. The results of Faster R-CNN model.</p>  
+<p align="center">Fig.7. Faster R-CNN model.</p>  
 <p align="center">
     <img src="Figure/效果图SCI-Retina-net新.jpg" width= "600">
 </p>
-<p align="center">Fig.8. The results results of the Retina Net model.</p>  
+<p align="center">Fig.8. Retina Net model.</p>  
 
 ## Dependencies
 
@@ -108,5 +104,5 @@ Fig.5.-8. show the results of the YOLOv8-CBAM-Wise-IoU model, YOLOv8x model, Fas
     <img src="Figure/数据集图片样例.jpg" width= "600">
 </p>
 <p align="center">Fig.9. Sample of defect images in datase.</p>    
-This study gathered a dataset of over 3,700 images depicting various bridge defects from Guizhou, annotated using the LabelImg tool. The dataset is divided into 3,219 images for training, 246 for validation, and 246 for testing. It includes seven common defect types: cracks, seepage, leakage, spalling, honeycombing, decay, and voids. Moreover, the dataset accounts for detection under varying sunlight conditions and includes features such as paint, expansion joints, water stains, and dry moss. Fig. 9. illustrates several of captured images.
+This study compiled a dataset of over 3,700 images showcasing various bridge defects in Guizhou, with annotations created using the LabelImg tool. The dataset is divided into 3,219 images for training, 246 for validation, and 246 for testing. It encompasses seven common defect types: cracks, seepage, leakage, spalling, honeycombing, decay, and voids. Additionally, the dataset incorporates diverse environmental conditions, such as varying sunlight, and includes features like paint, expansion joints, water stains, and dry moss. Examples of these images are presented in Fig. 9.
 To ensure the rigor of the research and the confidentiality of the data, the dataset will not be publicly available until the paper is officially accepted, to prevent potential misuse or impact on the integrity of the research. Once the paper is accepted, we will promptly release the dataset for academic use, to promote further research and development in the related field.
